@@ -1,50 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-  <div style="margin-left: 20px;">    
-              {% assign product_quantity = settings.product_quantity | split : "," %}
-
-      {% for i in (1..20)  %}
-       == {{ i }} ==
-        {% for user in product_quantity %}
-          {% assign present = false %}
-
-        {% if ik contains user %}
-          {{ ik }}
-          yes
-          {% break  %} 
-        {% else %}
-
-          {% comment %}
-          {% assign present = true %}
-          {% if present %}
-           true
-            {{ i }}</br>
-            {% assign present = false %}
-            {% break %}
-           {% endif %}
-          {% endcomment %}
-    {% endif %}
-  {%  endfor %} 
-{% endfor %}
-
-{% assign posts = "" %}
-{% for i in (1..20)  %}
-  {% if i contains myorders %}
-    {% else %}
-{% assign posts = posts | append: i | append : ',' %}
-  {% endif %}
-  
-{%  endfor %}
-
-    {% assign  gp = posts | split : "," %}
-{% for ip in gp  %}
-  {{ ip }}</br>
-  {% endfor %}
-
-
-    
-  
-  </div>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
